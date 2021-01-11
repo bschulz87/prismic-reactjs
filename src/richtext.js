@@ -84,7 +84,7 @@ function serializeEmbed(element, key) {
     createScript(embeds[element.oembed.provider_name]);
   }
 
-  const className = `embed embed-${element.oembed.provider_name.toLowerCase()}`
+  const className = `embed embed-${element.oembed.provider_name ? element.oembed.provider_name.toLowerCase() : `null`}`
   const props = Object.assign({
     "data-oembed": element.oembed.embed_url,
     "data-oembed-type": element.oembed.type,
